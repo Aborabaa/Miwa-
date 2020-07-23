@@ -15,6 +15,17 @@ bot.on('ready', () =>{
 bot.on('message', message=>{
     if(message.author.bot)
     {
+        if(message.embeds)
+        {
+            const embedMsg = message.embeds.find(msg => msg.title === 'Server Roles');
+            if(embedMsg)
+            {
+                embedMsg.message.react('735368107144642561')
+                .then(reaction => reaction.message.react(''))
+
+                .catch(err => console.error);
+            }
+        }
         return;
     }
 
@@ -93,6 +104,19 @@ bot.on('message', message=>{
         break;
 
     }
+});
+bot.on('messageReactionAdd', (reaction, user) => {
+    if(user.bot)
+       return;
+       var roleName = reaction.emoji.name;
+       var role = reaction.message.guild.roles.find(role => role.name.toLowerCase() === roleName.toLowerCase());
+       var member = reaction.message.guild.members.find(member => member.id === user.id);
+       member.addRole(role.id).then(member => {
+           console.log('Added' + member.user.username + 'to a role.');
+       }).catch(err => console.error);   
+
+    
+    
 });
 
 bot.login(process.env.token);
