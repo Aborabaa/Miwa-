@@ -10,56 +10,11 @@ var version = '1.0.0'
 
 bot.on('ready', () =>{
     console.log('Bot up and ready!')
+})
 
-    bot.on('message', message =>{
-        if(message.author.bot)
-        {
-            if(message.embeds)
-            {
-                const embedMsg = message.embeds.find(msg => msg.title === 'Server Roles');
-                if(embedMsg)
-                {
-                    embedMsg.message.react('')
-                    .then(reaction => reaction.message.react(':male_sign:'))
-                    .then(reaction => reaction.message.react(':female_sign:'))
-                    .then(reaction => reaction.message.react(':restroom:'))
+bot.on('message', message=>{
     
-                    .catch(err => console.error);
-                }
-            }
-            return;
-        }
-        if(message.content.toLowerCase() === '-roles')
-        {
-            const embed = new Discord.MessageEmbed();
-            embed.setTitle('Server Roles');
-            embed.setColor('000000');
-            embed.setDescription('Male - :male_sign:\n' +
-            'Female - :female_sign:\n' +
-            'Non-binary - :restroom:\n');
-            message.channel.send(embed); 
-    
-        }
-    
-    });
-    
-    
-    
-    bot.on('messageReactionAdd', (reaction, user) => {
-        if(user.bot)
-            return;
-            var roleName = reaction.emoji.name;
-            var role = reaction.message.guild.roles.find(role => role.name.toLowerCase() === roleName.toLowerCase());
-            var member = reaction.message.guild.members.find(member => member.id === user.id);
-        
-            member.addRole(role.id).then(member => {
-                console.log('Added' + member.user.username + 'to a role.');
-            }).catch(err => console.error);    
-        
-
     let args = message.content.substring(PREFIX.length).split(" ");
-    
-
 
     switch(args[0]){
         case 'ping':
@@ -102,12 +57,24 @@ bot.on('ready', () =>{
             if(args[1] === 'version'){
                 message.channel.send('Current (miwa ♡) Version = ' + version );
             }else{
-                message.channel.send('BAKA! <:nani:735368107144642561> Specify what do you want info about!')
+                message.channel.send('BAKA! Specify what do you want info about!')
             }
-        break;
+        break;   
         
+        
+        case 'roles':
+            const embed = new Discord.MessageEmbed()
+            .setTitle('Roles')
+            .addField('Male', ':male_sign:' )
+            .addField('Female', ':female_sign:')
+            .addField('Non-binary', ':restroom:')
+            .addField('ــــــــــــــــــــ', ':page_facing_up: More in depth')
+            .setColor(999999)
+            message.channel.send(embed);   
+ 
+        break;
 
     }
 });
 
-bot.login(process.env.token)});
+bot.login(process.env.token);
