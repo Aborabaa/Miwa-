@@ -13,9 +13,6 @@ bot.on('ready', () =>{
 })
 
 bot.on('message', message=>{
-    
-    let args = message.content.substring(PREFIX.length).split(" ");
-    
     if(message.author.bot)
     {
         return;
@@ -31,6 +28,10 @@ bot.on('message', message=>{
         'Non-binary - :restroom:');
 
     }
+    
+    let args = message.content.substring(PREFIX.length).split(" ");
+    
+
 
     switch(args[0]){
         case 'ping':
@@ -84,7 +85,7 @@ bot.on('message', message=>{
             .addField('Male', ':male_sign:' )
             .addField('Female', ':female_sign:')
             .addField('Non-binary', ':restroom:')
-            .addField('ــــــــــــــــــــ', ':page_facing_up: More in depth')
+            .addField('ــــــــــــــــــــ', ':page_facing_up: More in depth :page_facing_up:')
             .setColor(999999)
             message.channel.send(embed);   
  
