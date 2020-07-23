@@ -40,6 +40,7 @@ bot.on('message', message=>{
         message.channel.send(embed); 
 
     }
+});
     
 bot.on('messageReactionAdd', (reaction, user) => {
     if(user.bot)
