@@ -41,6 +41,17 @@ bot.on('message', message=>{
 
     }
     
+bot.on('messageReactionAdd', (reaction, user) => {
+    if(user.bot)
+        return;
+        var roleName = reaction.emoji.name;
+        var role = reaction.message.guild.roles.find(role => role.name.toLowerCase() === roleName.toLowerCase());
+        var member = reaction.message.guild.members.find(member => member.id === user.id);
+    
+        member.addRole(role.id).then(member => {
+            console.log('Added' + member.user.username + 'to a role.');
+        }).catch(err => console.error);    
+    
     let args = message.content.substring(PREFIX.length).split(" ");
     
 
@@ -89,34 +100,8 @@ bot.on('message', message=>{
                 message.channel.send('BAKA! <:nani:735368107144642561> Specify what do you want info about!')
             }
         break;   
-        
-        
-        case 'roles':
-            const embed = new Discord.MessageEmbed()
-            .setTitle('Server Roles')
-            .addField('Male', ':male_sign:' )
-            .addField('Female', ':female_sign:')
-            .addField('Non-binary', ':restroom:')
-            .addField('ــــــــــــــــــــ', ':page_facing_up: More in depth :page_facing_up:')
-            .setColor(999999)
-            message.channel.send(embed);   
- 
-        break;
 
     }
-});
-bot.on('messageReactionAdd', (reaction, user) => {
-    if(user.bot)
-       return;
-       var roleName = reaction.emoji.name;
-       var role = reaction.message.guild.roles.find(role => role.name.toLowerCase() === roleName.toLowerCase());
-       var member = reaction.message.guild.members.find(member => member.id === user.id);
-       member.addRole(role.id).then(member => {
-           console.log('Added' + member.user.username + 'to a role.');
-       }).catch(err => console.error);   
-
-    
-    
 });
 
 bot.login(process.env.token);
