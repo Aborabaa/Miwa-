@@ -21,14 +21,14 @@ bot.on('message', message=>{
         return;
     }
 
-    if(message.content.toLocaleLowerCase() === '-roles')
+    if(message.content.toLowerCase() === '-roles')
     {
         const embed = new Discord.MessageEmbed();
         embed.setTitle('Server Roles');
         embed.setColor('000000');
         embed.setDescription('Male - :male_sign:' +
         'Female - :female_sign:' +
-        'Non-binary - :restroom:' );
+        'Non-binary - :restroom:');
 
     }
 
