@@ -10,7 +10,7 @@ var version = '1.0.0'
 
 bot.on('ready', () =>{
     console.log('Bot up and ready!')
-})
+});
 
 bot.on('message', message=>{
     if(message.author.bot)
