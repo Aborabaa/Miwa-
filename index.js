@@ -58,13 +58,14 @@ bot.on('message', message=>{
                 message.channel.send('Current (miwa ♡) Version = ' + version );
             }else{
                 message.channel.send('BAKA! Specify what do you want info about!')
+                message.channel.send('<:nani:735368107144642561>')
             }
         break;   
         
         
         case 'roles':
             const embed = new Discord.MessageEmbed()
-            .setTitle('Roles')
+            .setTitle('Server Roles')
             .addField('Male', ':male_sign:' )
             .addField('Female', ':female_sign:')
             .addField('Non-binary', ':restroom:')
