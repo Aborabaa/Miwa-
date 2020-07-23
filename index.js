@@ -97,16 +97,14 @@ bot.on('messageReactionAdd', (reaction, user) => {
         case 'info':
             if(args[1] === 'version'){
                 message.channel.send('Current (miwa ♡) Version = ' + version );
+            }
+            if(args[1] === 'when'){
+                message.channel.send('(miwa ♡) was born July 22nd 2020');
             }else{
                 message.channel.send('BAKA! <:nani:735368107144642561> Specify what do you want info about!')
             }
         break;
         
-        case 'info':
-            if(args[1] === 'when'){
-                message.channel.send('(miwa ♡) was born July 22nd 2020');
-
-        break;   
 
     }
 });
