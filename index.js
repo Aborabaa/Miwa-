@@ -57,8 +57,7 @@ bot.on('message', message=>{
             if(args[1] === 'version'){
                 message.channel.send('Current (miwa ♡) Version = ' + version );
             }else{
-                message.channel.send('BAKA! Specify what do you want info about!')
-                message.channel.send('<:nani:735368107144642561>')
+                message.channel.send('BAKA! <:nani:735368107144642561> Specify what do you want info about!')
             }
         break;   
         
