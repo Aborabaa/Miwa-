@@ -23,9 +23,9 @@ bot.on('message', message=>{
         const embed = new Discord.MessageEmbed();
         embed.setTitle('Server Roles');
         embed.setColor('000000');
-        embed.setDescription('Male - :male_sign:' +
-        'Female - :female_sign:' +
-        'Non-binary - :restroom:');
+        embed.setDescription('Male - :male_sign:\n' +
+        'Female - :female_sign:\n' +
+        'Non-binary - :restroom:\n');
         message.channel.send(embed); 
 
     }
