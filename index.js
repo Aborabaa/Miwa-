@@ -12,7 +12,24 @@ bot.on('ready', () =>{
     console.log('Bot up and ready!')
 });
 
+bot.on('message', message =>{
+    if(messag.author.bot)
+    {
+        if(message.embeds)
+        {
+            const embedMsg = message.embeds.find(msg => msg.title === 'Server Roles');
+            if(embedMsg)
+            {
+                embedMsg.message.react('')
+                .then(reaction => reaction.message.react(':male_sign:'))
+                .then(reaction => reaction.message.react(':female_sign:'))
+                .then(reaction => reaction.message.react(':restroom:'))
 
+                .catch(err => console.error);
+            }
+        }
+        return;
+    }
     if(message.content.toLowerCase() === '-roles')
     {
         const embed = new Discord.MessageEmbed();
@@ -24,6 +41,10 @@ bot.on('ready', () =>{
         message.channel.send(embed); 
 
     }
+
+})
+
+
 
 bot.on('messageReactionAdd', (reaction, user) => {
     if(user.bot)
