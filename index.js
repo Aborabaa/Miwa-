@@ -13,7 +13,7 @@ bot.on('ready', () =>{
 });
 
 bot.on('message', message =>{
-    if(messag.author.bot)
+    if(message.author.bot)
     {
         if(message.embeds)
         {
