@@ -15,6 +15,23 @@ bot.on('ready', () =>{
 bot.on('message', message=>{
     
     let args = message.content.substring(PREFIX.length).split(" ");
+    
+    if(message.author.bot)
+    {
+        return;
+    }
+
+    if(message.content.toLocaleLowerCase() === '-roles')
+    {
+        const embed = new Discord.MessageEmbed();
+        embed.setTitle('Server Roles'):
+        embed.setColor('000000');
+        embed.setDescription('Male - :male_sign:' +
+        'Female - :female_sign:' +
+        'Non-binary - :restroom:' +
+        );
+
+    }
 
     switch(args[0]){
         case 'ping':
