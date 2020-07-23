@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 
+
 const PREFIX = '-';
 
 var version = '1.0.0'
@@ -74,6 +75,6 @@ bot.on('message', message=>{
         break;
 
     }
-})
+});
 
 bot.login(process.env.token);
