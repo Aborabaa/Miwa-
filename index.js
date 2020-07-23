@@ -20,9 +20,9 @@ bot.on('message', message=>{
             const embedMsg = message.embeds.find(msg => msg.title === 'Server Roles');
             if(embedMsg)
             {
-                embedMsg.message.react('735368107144642561')
-                .then(reaction => reaction.message.react(''))
-
+                embedMsg.message.react(':male_sign:')
+                .then(reaction => reaction.message.react(':female_sign:'))
+                .then(reaction => reaction.message.react(':restroom:'))
                 .catch(err => console.error);
             }
         }
@@ -41,7 +41,7 @@ bot.on('message', message=>{
 
     }
 });
-    
+
 bot.on('messageReactionAdd', (reaction, user) => {
     if(user.bot)
         return;
