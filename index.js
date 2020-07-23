@@ -12,22 +12,6 @@ bot.on('ready', () =>{
     console.log('Bot up and ready!')
 });
 
-bot.on('message', message=>{
-    if(message.author.bot)
-    {
-        if(message.embeds)
-        {
-            const embedMsg = message.embeds.find(msg => msg.title === 'Server Roles');
-            if(embedMsg)
-            {
-                embedMsg.message.react(':male_sign:')
-                .then(reaction => reaction.message.react(':female_sign:'))
-                .then(reaction => reaction.message.react(':restroom:'))
-                .catch(err => console.error);
-            }
-        }
-        return;
-    }
 
     if(message.content.toLowerCase() === '-roles')
     {
@@ -40,7 +24,6 @@ bot.on('message', message=>{
         message.channel.send(embed); 
 
     }
-});
 
 bot.on('messageReactionAdd', (reaction, user) => {
     if(user.bot)
@@ -95,8 +78,8 @@ bot.on('messageReactionAdd', (reaction, user) => {
         break; 
         
         case 'info':
-            if(args[1] === 'birthday'){
-                message.channel.send('(miwa ♡) was born on July 22nd 2020' );
+            if(args[1] === 'version'){
+                message.channel.send('Current (miwa ♡) Version = ' + version );
             }else{
                 message.channel.send('BAKA! <:nani:735368107144642561> Specify what do you want info about!')
             }
