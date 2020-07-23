@@ -10,7 +10,7 @@ var version = '1.0.0'
 
 bot.on('ready', () =>{
     console.log('Bot up and ready!')
-});
+}
 
 
     let args = message.content.substring(PREFIX.length).split(" ");
