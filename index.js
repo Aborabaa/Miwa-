@@ -54,6 +54,10 @@ bot.on('message', message=>{
             case 'janella':
                 message.channel.send('Is slow and dumb!')
             break; 
+
+            case 'birthday':
+                message.channel.send('(miwa ♡) Was born on July 22nd 2020 <:milkpleaseee:735977442392408116>!')
+            break; 
             
             case 'info':
                 if(args[1] === 'version'){
