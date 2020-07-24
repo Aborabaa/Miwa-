@@ -1,6 +1,11 @@
 const { Client, MessageEmbed } = require('discord.js');
+
 const bot = new Client();
+
 const ytdl = require("ytdl-core");
+
+const { prefix, token } = require("./config.json");
+
 
 bot.login(process.env.token);
 
