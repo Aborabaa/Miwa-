@@ -25,8 +25,7 @@ bot.on('message', message => {
         embed.setColor(000000);
         embed.setDescription('Male - :male_sign:\n' +
         'Female - :female_sign:\n' +
-        'Non-binary - :restroom:\n
-        ')
+        'Non-binary - :restroom:\n')
         message.channel.send(embed);
     }
 });
