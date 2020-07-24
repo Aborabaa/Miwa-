@@ -20,7 +20,7 @@ bot.on('message', message => {
 
     if(message.content.toLowerCase() === '-roles')
     {
-        const embed = new discord.MessageEmbed();
+        const embed = new Discord.MessageEmbed();
         embed.setTitle('Server Roles');
         embed.setColor(000000);
         message.channel.send(embed);
