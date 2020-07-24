@@ -4,7 +4,6 @@ const bot = new Client();
 
 const ytdl = require("ytdl-core");
 
-const { prefix, token } = require("./config.json");
 
 
 bot.login(process.env.token);
@@ -49,7 +48,7 @@ bot.on('message', message=>{
                      return;
 
                  }
-                 if(!message.member.voiceChannel){
+                 if(!message.member.voice.Channel){
                      message.channel.send("You aren't in a voice channel to listen to me <:tf:735373969376542780>");
                      return;
                  }
