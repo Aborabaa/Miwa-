@@ -44,10 +44,7 @@ bot.on('message', message=>{
                      return;
 
                  }
-                 if(!message.member.voiceChannel){
-                     message.channel.send("You aren't in a voice channel to listen to me <:tf:735373969376542780>");
-                     return;
-                 }
+
 
                  if(!servers[message.guild.id]) servers[message.guild.id] = {
                      queue: []
