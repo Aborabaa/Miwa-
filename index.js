@@ -23,6 +23,7 @@ bot.on('message', message => {
         const embed = new MessageEmbed();
         embed.setTitle('Server Roles');
         embed.setColor(000000);
+        embed.setDescription(':male_sign:')
         message.channel.send(embed);
     }
 });
