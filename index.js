@@ -56,12 +56,20 @@ bot.on('message', message=>{
             message.channel.send ("**Sleep tight <:milkheartss:735363636725547069>**");
         }
 
-        if (message.content.startsWith("goodnight")) {
+        if (message.content.startsWith("good night")) {
             message.channel.send ("**Sleep tight <:milkheartss:735363636725547069>**");
         }
 
-        if (message.content.startsWith("Goodnight")) {
+        if (message.content.startsWith("good morning")) {
+            message.channel.send ("**Rise and shine <:milkandmochanomm:735978440045494342>**");
+        }
+
+        if (message.content.startsWith("Good night")) {
             message.channel.send ("**Sleep tight <:milkheartss:735363636725547069>**");
+        }
+
+        if (message.content.startsWith("Good morning")) {
+            message.channel.send ("**Rise and shine <:milkandmochanomm:735978440045494342>**");
         }
 
         if (message.content.startsWith("tina")) {
@@ -181,53 +189,7 @@ bot.on('message', message=>{
                 }
                 if(message.member.connection) message.member.voice.connection.disconnect();
 
-            break;
-
-
-    
-            case 'abhi':
-                message.channel.send('**Is a coconut head!**')
-            break;
-
-            case 'adios':
-                message.channel.send('**Adios amigo <:tongue:735373846558801930>**')
-            break;
-
-            case 'gn':
-                message.channel.send('**Sleep tight <:milkheartss:735363636725547069>**')
-            break;
-    
-            case 'tina':
-                message.channel.send('**Will never be loved more than abhi’s drone!**')
-            break;
-    
-            case 'ham':
-                message.channel.send('**has a fetish to kitty paws.. weirdo..**')
-            break;
-    
-            case 'abori':
-                message.channel.send('**Is a dummy who cant understand english..**')
-            break;
-    
-            case 'coffee':
-                message.channel.send('**Is not young and fresh!**')
-            break;
-    
-            case 'jantai':
-                message.channel.send('**Is lonely and sad..**')
-            break;
-    
-            case 'miguel':
-                message.channel.send('**Is gay!**')
-            break;    
-    
-            case 'janella':
-                message.channel.send('**Is slow and dumb!**')
-            break; 
-
-            case 'birthday':
-                message.channel.send('**(miwa ♡) Was born on July 22nd 2020 <:milkpleaseee:735977442392408116>!**')
-            break; 
+            break;   
 
             
             case 'info':
