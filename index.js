@@ -30,7 +30,7 @@ bot.on("guildDelete", guild => {
     // this event triggers when the bot is removed from a guild.
     console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
     client.user.setActivity(`Serving ${client.guilds.size} servers`);
-  });
+});
 
 
 
@@ -39,6 +39,10 @@ bot.on("guildDelete", guild => {
 bot.on('message', message=>{
     
         let args = message.content.substring(PREFIX.length).split(" ");
+
+        if (message.content.startswith("Abo")) {
+            message.channel.send ("It's working!");
+        }
     
         switch(args[0]){
             case 'play':
