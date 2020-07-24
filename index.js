@@ -45,7 +45,7 @@ bot.on('message', message=>{
 
                  }
                  if(!message.member.voiceChannel){
-                     message.channel.send("You aren't in a voice channel to listen to me <:tf:735373969376542780>");
+                     message.channel.send("You aren't in a voice channel to listen to me <:tf:735373969376542780>!");
                      return;
                  }
 
