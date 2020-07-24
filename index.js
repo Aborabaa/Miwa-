@@ -60,6 +60,40 @@ bot.on("messageReactionAdd", async (reaction, user) => {
     }
 })
 
+bot.on("messageReactionRemove", async (reaction, user) => {
+    if (reaction.message.partial) await reaction.message.fetch();
+    if (reaction.partial) await reaction.fetch();
+
+    if (user.bot) return;
+    if (!reaction.message.guild) return;
+
+    if(reaction.message.channel.id === "734990112655671356") {
+        if (reaction.emoji.name === "🚹") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735634742388719680") //Male emoji removed
+            return user.send("Male role was taken!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if (reaction.emoji.name === "🚺") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735634101184233473") //Female emoji removed
+            return user.send("Female role was taken!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if (reaction.emoji.name === "🚻") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735635059385827348") //Non-binary emoji removed
+            return user.send("Non-binary role was taken!").catch(() => console.log("Failed to send DM."));
+        }
+
+    
+           //continue
+
+    } else {
+        return;
+    }
+
+
+
+})
+
 
 
 
