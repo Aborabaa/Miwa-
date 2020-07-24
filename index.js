@@ -10,7 +10,7 @@ bot.login(process.env.token);
 
 const PREFIX = '-';
 
-var version = '1.0.0'
+var version = '**1.0.0**'
 
 var servers = {};
 
@@ -130,60 +130,60 @@ bot.on('message', message=>{
                 }
                 if(message.member.connection) message.member.voice.connection.disconnect();
 
-                break;
+            break;
 
 
     
             case 'abhi':
-                message.channel.send('Is a coconut head!')
+                message.channel.send('**Is a coconut head!**')
             break;
 
             case 'adios':
-                message.channel.send('Adios amigo <:tongue:735373846558801930>')
+                message.channel.send('**Adios amigo <:tongue:735373846558801930>**')
             break;
 
             case 'gn':
-                message.channel.send('Sleep tight <:milkheartss:735363636725547069>')
+                message.channel.send('**Sleep tight <:milkheartss:735363636725547069>**')
             break;
     
             case 'tina':
-                message.channel.send('Will never be loved more than abhi’s drone!')
+                message.channel.send('**Will never be loved more than abhi’s drone!**')
             break;
     
             case 'ham':
-                message.channel.send('has a fetish to kitty paws.. weirdo..')
+                message.channel.send('**has a fetish to kitty paws.. weirdo..**')
             break;
     
             case 'abori':
-                message.channel.send('Is a dummy who cant understand english..')
+                message.channel.send('**Is a dummy who cant understand english..**')
             break;
     
             case 'coffee':
-                message.channel.send('Is not young and fresh!')
+                message.channel.send('**Is not young and fresh!**')
             break;
     
             case 'jantai':
-                message.channel.send('Is lonely and sad..')
+                message.channel.send('**Is lonely and sad..**')
             break;
     
             case 'miguel':
-                message.channel.send('Is gay!')
+                message.channel.send('**Is gay!**')
             break;    
     
             case 'janella':
-                message.channel.send('Is slow and dumb!')
+                message.channel.send('**Is slow and dumb!**')
             break; 
 
             case 'birthday':
-                message.channel.send('(miwa ♡) Was born on July 22nd 2020 <:milkpleaseee:735977442392408116>!')
+                message.channel.send('**(miwa ♡) Was born on July 22nd 2020 <:milkpleaseee:735977442392408116>!**')
             break; 
 
             
             case 'info':
                 if(args[1] === 'version'){
-                    message.channel.send('Current (miwa ♡) Version = ' + version );
+                    message.channel.send('**Current (miwa ♡) Version =** ' + version );
                 }else{
-                    message.channel.send('BAKA! <:nani:735368107144642561> Specify what do you want info about!')
+                    message.channel.send('**BAKA! <:nani:735368107144642561> Specify what do you want info about!**')
                 }
             break;
         }           
