@@ -17,7 +17,7 @@ var servers = {};
 var check1 = 0;
 
 bot.on('ready', () =>{
-    console.log('Bot up and ready!')
+    console.log('miwa ♡ up and ready!')
 });
 
 bot.on("guildCreate", guild => {
