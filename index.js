@@ -44,7 +44,7 @@ bot.on('message', message=>{
         if (message.content.startsWith(PREFIX + "Roles")) {
             let channel = bot.channels.cache.get("724752904292139169");
             const embed = new Discord.MessageEmbed()
-        .setColor(808080)
+        .setColor(666666)
         .setTitle("Please pick your favorite roles <:oops:735363476184367225>")
         .setDescription(`Male |  :male_sign: \n\nFemale |  :female_sign: \n\nNon-binary |  :restroom:`)
         channel.send(embed).then(async message => {
