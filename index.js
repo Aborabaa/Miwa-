@@ -4,6 +4,7 @@ const bot = new Client();
 
 const ytdl = require("ytdl-core");
 
+const Discord = require('discord.js');
 
 bot.login(process.env.token);
 //bot.login('');
