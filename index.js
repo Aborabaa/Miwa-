@@ -41,7 +41,7 @@ bot.on('message', message=>{
         let args = message.content.substring(PREFIX.length).split(" ");
 
         if (message.content.startsWith(PREFIX + "Roles")) {
-            let channel = client.channels.cache.get("724752904292139169");
+            let channel = bot.channels.cache.get("724752904292139169");
         const embed = new Discord.MessageEmbed ()
         .setColor(000000)
         .setTitle("Please pick your favorite roles <:oops:735363476184367225>")
