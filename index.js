@@ -20,9 +20,9 @@ bot.on('message', message => {
             const embedMsg = message.embeds.find(msg => msg.title === 'Server Roles');
             if(embedMsg)
             {
-                embedMsg.message.react(':male_sign')
-                .then(reaction => reaction.message.react(':female_sign'))
-                .then(reaction => reaction.message.react(':restroom:'))
+                embedMsg.message.react('♂️')
+                .then(reaction => reaction.message.react('♀️'))
+                .then(reaction => reaction.message.react('🚻'))
                 .catch(err => console.error);
             }
         }
@@ -34,9 +34,9 @@ bot.on('message', message => {
         const embed = new MessageEmbed();
         embed.setTitle('Server Roles');
         embed.setColor(000000);
-        embed.setDescription('Male | :male_sign:\n' +
-        'Female | :female_sign:\n' +
-        'Non-binary | :restroom:\n');
+        embed.setDescription('Male |  :male_sign:\n' +
+        'Female |  :female_sign:\n' +
+        'Non-binary |  :restroom:\n');
         message.channel.send(embed);
     }
 });
