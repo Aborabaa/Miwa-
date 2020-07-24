@@ -34,8 +34,18 @@ bot.on("message", async message => {
     if(command === "ping") {
         const m = await message.channel.send("Ping?");
         m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+    }
+    if(command === "say") {
+       
+        const sayMessage = args.join(" ");
+      
+        message.delete().catch(O_o=>{}); 
+        
+        message.channel.send(sayMessage);
       }
-    });
+
+      
+});
 
 
 
