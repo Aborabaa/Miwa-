@@ -1,6 +1,6 @@
 const { Client, MessageEmbed, DiscordAPIError } = require('discord.js');
 
-const bot = new Client();
+const bot = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 
 const ytdl = require("ytdl-core");
 
@@ -32,6 +32,33 @@ bot.on("guildDelete", guild => {
     console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
     client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
+bot.on("messageReactionAdd", async (reaction, user) => {
+    if (reaction.message.partial) await reaction.message.fetch();
+    if (reaction.partial) await reaction.fetch();
+
+    if (user.bot) return;
+    if (!reaction.message.guild) return;
+    
+    if(reaction.message.channel.id === "734990112655671356") {
+        if (reaction.emoji.name === "🚹") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735634742388719680") //Male emoji
+            return user.send("Male role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if(reaction.emoji.name === "🚺") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735634101184233473") //Female emoji
+            return user.send("Female role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if(reaction.emoji.name === "🚻") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735635059385827348") //Non-binary emoji
+            return user.send("Non-binary role was given!").catch(() => console.log("Failed to send DM."));
+        }
+        
+    } else {
+        return;
+    }
+})
 
 
 
