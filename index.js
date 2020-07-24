@@ -40,9 +40,56 @@ bot.on('message', message=>{
     
         let args = message.content.substring(PREFIX.length).split(" ");
 
-        if (message.content.startsWith("Abo")) {
-            message.channel.send ("It's working!");
+        if (message.content.startsWith("abori")) {
+            message.channel.send ("**Is a dummy who cant understand english..**");
         }
+
+        if (message.content.startsWith("abhi")) {
+            message.channel.send ("**Is a coconut head!**");
+        }
+
+        if (message.content.startsWith("adios")) {
+            message.channel.send ("**Adios amigo <:tongue:735373846558801930>**");
+        }
+
+        if (message.content.startsWith("gn")) {
+            message.channel.send ("**Sleep tight <:milkheartss:735363636725547069>**");
+        }
+
+        if (message.content.startsWith("goodnight")) {
+            message.channel.send ("**Sleep tight <:milkheartss:735363636725547069>**");
+        }
+
+        if (message.content.startsWith("Goodnight")) {
+            message.channel.send ("**Sleep tight <:milkheartss:735363636725547069>**");
+        }
+
+        if (message.content.startsWith("tina")) {
+            message.channel.send ("**Will never be loved more than abhi’s drone!**");
+        }
+
+        if (message.content.startsWith("ham")) {
+            message.channel.send ("**has a fetish to kitty paws.. weirdo..**");
+        }
+
+        if (message.content.startsWith("coffee")) {
+            message.channel.send ("**Is not young and fresh!**");
+        }
+
+        if (message.content.startsWith("jantai")) {
+            message.channel.send ("**Is lonely and sad..**");
+        }
+
+        if (message.content.startsWith("miguel")) {
+            message.channel.send ("**Is gay!**");
+        }
+
+        if (message.content.startsWith("janella")) {
+            message.channel.send ("**Is slow and dumb!**");
+        }
+
+
+        
     
         switch(args[0]){
             case 'play':
