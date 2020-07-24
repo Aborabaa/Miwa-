@@ -40,7 +40,7 @@ bot.on('message', message=>{
     
         let args = message.content.substring(PREFIX.length).split(" ");
 
-        if (message.startsWith(PREFIX + "Roles")) {
+        if (message.content.startsWith(PREFIX + "Roles")) {
             let channel = client.channels.cache.get("724752904292139169");
         const embed = new Discord.MessageEmbed ()
         .setColor(000000)
