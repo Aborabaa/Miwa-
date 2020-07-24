@@ -44,8 +44,7 @@ bot.on("message", async message => {
         message.channel.send(sayMessage);
       }
 
-      
-});
+  });
 
 
 
