@@ -48,7 +48,7 @@ bot.on('message', message=>{
         .setTitle("Please pick your favorite roles <:oops:735363476184367225>")
         .setDescription(`Male |  :male_sign: \n\nFemale |  :female_sign: \n\nNon-binary |  :restroom:`)
         channel.send(embed).then(async message => {
-            await message.react("735682720285327460");
+            await message.react("♂️");
             await message.react("735363737355157526");
             await message.react("735978440045494342");
 
