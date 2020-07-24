@@ -1,4 +1,4 @@
-const { Client, MessageEmbed } = require('discord.js');
+const { Client, MessageEmbed, DiscordAPIError } = require('discord.js');
 
 const bot = new Client();
 
@@ -39,6 +39,21 @@ bot.on("guildDelete", guild => {
 bot.on('message', message=>{
     
         let args = message.content.substring(PREFIX.length).split(" ");
+
+        if (messagestartsWith(prefix + "Roles")) {
+            let channel = client.channels.cache.get("");
+        const embed = new Discord.MessageEmbed ()
+        .setColor(000000)
+        .setTitle("Please pick your favorite roles <:oops:735363476184367225>")
+        .setDescription(`Male |  :male_sign: \n\nFemale |  :female_sign: \n\nNon-binary |  :restroom:`)
+        channel.send(embed).then(async message => {
+            await message.react(":male_sign:");
+            await message.react(":female_sign:");
+            await message.react(":restroom:");
+
+        })
+            
+    }
 
         if (message.content.startsWith("abori")) {
             message.channel.send ("**Is a dummy who cant understand english..**");
