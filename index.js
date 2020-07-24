@@ -42,7 +42,7 @@ bot.on('message', message=>{
         let args = message.content.substring(PREFIX.length).split(" ");
 
         if (message.content.startsWith(PREFIX + "RolesGender")) {
-            let channel = bot.channels.cache.get("724752904292139169");
+            let channel = bot.channels.cache.get("734990112655671356");
             const embed = new Discord.MessageEmbed()
         .setColor(111111)
         .setTitle("⋆ ˚｡⋆୨୧˚ **Gender roles** ˚୨୧⋆｡˚ ⋆")
