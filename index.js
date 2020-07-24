@@ -41,45 +41,69 @@ bot.on('message', message=>{
         switch(args[0]){
             case 'play':
 
-                function play(connection, message){
-                    var server = servers[message.guild.id];
+                function play(connection, msg){
+                    var server = servers[msg.guild.id];
+                    
+                    check1 = 1;
 
-                    server.discpatcher = connection.play(ytdl(server.queue[0], {filter: "audioonly"}));
+                    try {
+
+                    server.dispatcher = connection.play(ytdl(server.queue[0], {filter: "audioonly"}));
+                
+               
 
                     server.queue.shift();
+                    
+                    
 
-                    server.dispatcher.on("end", function(){
+                    server.dispatcher.on("finish", function(){
                         if(server.queue[0]){
-                            play(connection, message);
+                            play(connection, msg);
+                            check1 = 0;
                         }else {
                             connection.disconnect();
+                            check1 = 0;
                         }
                     });
                 }
-
+                    catch(err){
+                        msg.channel.send("**Link not valid bro!**");
+                        connection.disconnect();
+                            check1 = 0;
+                }
+     
+                }
+     
+     
                  if(!args[1]){
-                     message.channel.send('Nani? <:nani:735368107144642561> What do you want to play? ');
-                     return;
-
-                 }
-                 if(!message.member.voice.Channel){
-                     message.channel.send("You aren't in a voice channel to listen to me <:tf:735373969376542780>");
+                     msg.channel.send("**You must provide a link!**");
                      return;
                  }
-
-                 if(!servers[message.guild.id]) servers[message.guild.id] = {
+     
+                 if(!msg.member.voice.channel){
+                     msg.channel.send("**You must be in a voice channel!**");
+                     return;
+                 }
+     
+                 if(!servers[msg.guild.id]) servers[msg.guild.id] = {
                      queue: []
                  }
-
-                 var server = servers[message.guild.id];
-
+     
+                 var server = servers[msg.guild.id];
+                 
+                 
                  server.queue.push(args[1]);
-
-                 if(!message.member.voiceConnection) message.member.voiceChannel.join().then(function(connection){
-                     play(connection, message);
+                 
+                 
+                 if(check1 === 0){
+                 if(!msg.member.voice.connection) msg.member.voice.channel.join().then(function(connection){
+                     play(connection, msg);
                  })
+                }
 
-            break; 
+             
+                
+            break;
 
 
     
