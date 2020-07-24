@@ -86,6 +86,14 @@ bot.on('message', message=>{
             case 'abhi':
                 message.channel.send('Is a coconut head!')
             break;
+
+            case 'adios':
+                message.channel.send('Adios amigo <:tongue:735373846558801930>')
+            break;
+
+            case 'gn':
+                message.channel.send('Sleep tight <:milkheartss:735363636725547069>')
+            break;
     
             case 'tina':
                 message.channel.send('Will never be loved more than abhi’s drone!')
