@@ -18,6 +18,25 @@ bot.on('ready', () =>{
     console.log('Bot up and ready!')
 });
 
+bot.on("guildCreate", guild => {
+    // This event triggers when the bot joins a guild.
+    console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+    client.user.setActivity(`Serving ${client.guilds.size} servers`);
+  });
+
+bot.on("guildDelete", guild => {
+    // this event triggers when the bot is removed from a guild.
+    console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
+    client.user.setActivity(`Serving ${client.guilds.size} servers`);
+  });
+
+bot.on("message", async message => {
+    if(command === "ping") {
+        const m = await message.channel.send("Ping?");
+        m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+      }
+    });
+
 
 
 bot.on('message', message=>{
@@ -59,9 +78,7 @@ bot.on('message', message=>{
 
             break; 
 
-            case 'ping':
-                message.channel.send('pong!')
-            break;
+
     
             case 'abhi':
                 message.channel.send('Is a coconut head!')
