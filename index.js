@@ -20,7 +20,7 @@ bot.on('message', message => {
             const embedMsg = message.embeds.find(msg => msg.title === 'Server Roles');
             if(embedMsg)
             {
-                embedMsg.message.react('♂️')
+                embedMsg.message.react('735371070525407271')
                 .then(reaction => reaction.message.react('♀️'))
                 .then(reaction => reaction.message.react('🚻'))
                 .catch(err => console.error);
