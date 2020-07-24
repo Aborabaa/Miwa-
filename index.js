@@ -6,7 +6,7 @@ const ytdl = require("ytdl-core");
 
 
 bot.login(process.env.token);
-//bot.login('NzM1NjQwNzUxNzg2MTY0Mjc3.XxjM1g.CZTUViBX294Md8z8UBaWfvRY_Nk');
+//bot.login('');
 
 const PREFIX = '-';
 
