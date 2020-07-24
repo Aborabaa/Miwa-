@@ -40,7 +40,7 @@ bot.on('message', message=>{
     
         let args = message.content.substring(PREFIX.length).split(" ");
 
-        if (message.content.startswith("Abo")) {
+        if (message.content.startsWith("Abo")) {
             message.channel.send ("It's working!");
         }
     
