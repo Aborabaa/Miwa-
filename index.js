@@ -41,3 +41,15 @@ bot.on('message', message => {
     }
 });
 
+bot.on('messageReactionAdd', (reaction, user) => {
+    if(user.bot)
+        return;
+        
+    var roleName = reaction.emoji.name;
+    var role = reaction.message.guild.roles.find(role => role.name.roLowerCase() === roleName.toLowerCase());
+    var member = reaction.message.guild.memebers.find(member => member.id === user.id);
+    member.addRole(role.id).then(member => {
+        console.log('added' + member.user.username + 'to a role.');
+    }).catch(err => console.error);
+
+})
