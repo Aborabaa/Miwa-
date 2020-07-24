@@ -5,14 +5,16 @@ const bot = new Client();
 const ytdl = require("ytdl-core");
 
 
-
 bot.login(process.env.token);
+//bot.login('NzM1NjQwNzUxNzg2MTY0Mjc3.XxjM1g.CZTUViBX294Md8z8UBaWfvRY_Nk');
 
 const PREFIX = '-';
 
 var version = '1.0.0'
 
 var servers = {};
+
+var check1 = 0;
 
 bot.on('ready', () =>{
     console.log('Bot up and ready!')
@@ -41,8 +43,8 @@ bot.on('message', message=>{
         switch(args[0]){
             case 'play':
 
-                function play(connection, msg){
-                    var server = servers[msg.guild.id];
+                function play(connection, message){
+                    var server = servers[message.guild.id];
                     
                     check1 = 1;
 
@@ -58,7 +60,7 @@ bot.on('message', message=>{
 
                     server.dispatcher.on("finish", function(){
                         if(server.queue[0]){
-                            play(connection, msg);
+                            play(connection, message);
                             check1 = 0;
                         }else {
                             connection.disconnect();
@@ -67,7 +69,7 @@ bot.on('message', message=>{
                     });
                 }
                     catch(err){
-                        msg.channel.send("**Link not valid bro!**");
+                        message.channel.send("**Link not valid bro!**");
                         connection.disconnect();
                             check1 = 0;
                 }
@@ -76,34 +78,59 @@ bot.on('message', message=>{
      
      
                  if(!args[1]){
-                     msg.channel.send("**You must provide a link!**");
+                     message.channel.send("**You must provide a link!**");
                      return;
                  }
      
-                 if(!msg.member.voice.channel){
-                     msg.channel.send("**You must be in a voice channel!**");
+                 if(!message.member.voice.channel){
+                     message.channel.send("**You must be in a voice channel!**");
                      return;
                  }
      
-                 if(!servers[msg.guild.id]) servers[msg.guild.id] = {
+                 if(!servers[message.guild.id]) servers[message.guild.id] = {
                      queue: []
                  }
      
-                 var server = servers[msg.guild.id];
+                 var server = servers[message.guild.id];
                  
                  
                  server.queue.push(args[1]);
                  
                  
                  if(check1 === 0){
-                 if(!msg.member.voice.connection) msg.member.voice.channel.join().then(function(connection){
-                     play(connection, msg);
+                 if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
+                     play(connection, message);
                  })
                 }
 
              
                 
             break;
+
+            case 'skip':
+                var server = servers[message.guild.id];
+
+                if(server.dispatcher) server.dispatcher.end();
+                message.channel.send("Skiped this garbage! Bruh");
+            break;
+
+            case 'stop':
+                var server = servers[message.guild.id];
+
+                if(message.guild.voice.connection)
+                {
+                    for(var i = server.queue.length -1; i >=0; i--)
+                    {
+                        server.queue.splice(i,1);
+                    }
+
+                    server.dispatcher.end();
+                    message.channel.send("The master stoped the queue");
+                    //console.log('Stopped the queue')
+                }
+                if(message.member.connection) message.member.voice.connection.disconnect();
+
+                break;
 
 
     
