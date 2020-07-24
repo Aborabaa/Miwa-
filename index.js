@@ -170,7 +170,7 @@ bot.on('message', message=>{
                 var server = servers[message.guild.id];
 
                 if(server.dispatcher) server.dispatcher.end();
-                message.channel.send("Skiped this garbage! Bruh");
+                message.channel.send("**Skipped! <:pepeok:735682720285327460>**");
             break;
 
             case 'stop':
@@ -184,7 +184,7 @@ bot.on('message', message=>{
                     }
 
                     server.dispatcher.end();
-                    message.channel.send("The master stoped the queue");
+                    message.channel.send("**Okie, sttoped the queue <:mochaok:735363737355157526>**");
                     //console.log('Stopped the queue')
                 }
                 if(message.member.connection) message.member.voice.connection.disconnect();
