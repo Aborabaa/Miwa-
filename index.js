@@ -69,7 +69,7 @@ bot.on('message', message=>{
                     });
                 }
                     catch(err){
-                        message.channel.send("**Link not valid bro!**");
+                        message.channel.send("**Link is not valid <:shockedd:735373911377838143>!**");
                         connection.disconnect();
                             check1 = 0;
                 }
@@ -78,12 +78,12 @@ bot.on('message', message=>{
      
      
                  if(!args[1]){
-                     message.channel.send("**You must provide a link!**");
+                     message.channel.send("**Nani <:nani:735368107144642561> What do you want to play!**");
                      return;
                  }
      
                  if(!message.member.voice.channel){
-                     message.channel.send("**You must be in a voice channel!**");
+                     message.channel.send("**You aren't in a vocie channel to listen to me <:tf:735373969376542780>!**");
                      return;
                  }
      
