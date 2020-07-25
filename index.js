@@ -220,32 +220,32 @@ bot.on("messageReactionRemove", async (reaction, user) => {
         //Interests Roles
 
         if (reaction.emoji.name === "") {
-            await reaction.message.guild.members.cache.get(user.id).roles.remove("735641537081376768") //Gaming emoji removed
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735648192611483669") //Gaming emoji removed
             return user.send("Gaming role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
         if (reaction.emoji.name === "") {
-            await reaction.message.guild.members.cache.get(user.id).roles.remove("735641537081376768") //Anime emoji removed
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735648550318243892") //Anime emoji removed
             return user.send("Anime role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
         if (reaction.emoji.name === "") {
-            await reaction.message.guild.members.cache.get(user.id).roles.remove("735641537081376768") //Music emoji removed
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735648919652139060") //Music emoji removed
             return user.send("Music role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
         if (reaction.emoji.name === "") {
-            await reaction.message.guild.members.cache.get(user.id).roles.remove("735641537081376768") //Sports emoji removed
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735648544706527263") //Sports emoji removed
             return user.send("Sports role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
         if (reaction.emoji.name === "") {
-            await reaction.message.guild.members.cache.get(user.id).roles.remove("735641537081376768") //Netflix-binger emoji removed
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735648727523393568") //Netflix-binger emoji removed
             return user.send("Netflix-binger role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
         if (reaction.emoji.name === "735654273941241976") {
-            await reaction.message.guild.members.cache.get(user.id).roles.remove("735641537081376768") //K-pop emoji removed
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735648825116459079") //K-pop emoji removed
             return user.send("K-pop role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
@@ -329,6 +329,11 @@ bot.on('message', message=>{
         .setTitle("⋆ ˚｡⋆୨୧˚ **Interests roles** ˚୨୧⋆｡˚ ⋆")
         .setDescription(`Gaming |   \n\nAnime |   \n\nMusic |   \n\nSports |   \n\nNetflix-binger |   \n\nK-pop |  <:kpop:735654273941241976>`)
         channel.send(embed).then(async message => {
+            await message.react(""); // ID of emoji
+            await message.react("");
+            await message.react("");
+            await message.react("");
+            await message.react("");
             await message.react("735654273941241976");
 
         })
