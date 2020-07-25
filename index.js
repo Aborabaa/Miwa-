@@ -439,8 +439,8 @@ bot.on('message', message=>{
             let channel = bot.channels.cache.get("735346171811463238"); //Channel ID
             const embed = new Discord.MessageEmbed()
         .setColor(0xF1EDED)
-        .setTitle("⋆ ˚｡⋆୨୧˚ **Relation roles** ˚୨୧⋆｡˚ ⋆")
-        .setDescription(`Single |  <:fuckoff:735373846252879952>  \n\nTaken |  <:milkandmochahugg:735363284068466709> \n\nNot interested |  <:no:735368058989707264> \n\nLooking |  <:mocharose:735664992422199307> `)
+        .setTitle("⋆ ˚｡⋆୨୧˚ **Relationship roles** ˚୨୧⋆｡˚ ⋆")
+        .setDescription(`Single |  <:fuckoff:735373846252879952>  \n\nTaken |  <:milkandmochahugg:735363284068466709>  \n\nNot interested |  <:no:735368058989707264>  \n\nLooking |  <:mocharose:735664992422199307>`)
         channel.send(embed).then(async message => {
             await message.react("735373846252879952"); //ID of emoji
             await message.react("735363284068466709");
