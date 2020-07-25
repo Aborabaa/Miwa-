@@ -113,27 +113,27 @@ bot.on("messageReactionAdd", async (reaction, user) => {
     }
 
     if(reaction.message.channel.id === "734990112655671356") { //Interests roles *give*
-        if (reaction.emoji.id === "") { // emoji ID
+        if (reaction.emoji.id === "735652063827984385") { // emoji ID
             await reaction.message.guild.members.cache.get(user.id).roles.add("735648192611483669")//Role ID  //Gaming emoji given
             return user.send("Gaming role was given!").catch(() => console.log("Failed to send DM."));
         }
 
-        if(reaction.emoji.id === "") {
+        if(reaction.emoji.id === "735371070525407271") {
             await reaction.message.guild.members.cache.get(user.id).roles.add("735648550318243892") //Anime emoji given
             return user.send("Anime role was given!").catch(() => console.log("Failed to send DM."));
         }
 
-        if(reaction.emoji.id === "") {
+        if(reaction.emoji.id === "735654274947743824") {
             await reaction.message.guild.members.cache.get(user.id).roles.add("735648919652139060") //Music  emoji given 
             return user.send("Music role was given!").catch(() => console.log("Failed to send DM."));
         }
 
-        if(reaction.emoji.id === "") {
+        if(reaction.emoji.id === "735654273605435463") {
             await reaction.message.guild.members.cache.get(user.id).roles.add("735648544706527263") //Sports  emoji given 
             return user.send("Sports role was given!").catch(() => console.log("Failed to send DM."));
         }
 
-        if(reaction.emoji.id === "") {
+        if(reaction.emoji.id === "735654274817589289") {
             await reaction.message.guild.members.cache.get(user.id).roles.add("735648727523393568") //Netflix-binger  emoji given
             return user.send("Netflix-binger role was given!").catch(() => console.log("Failed to send DM."));
         }
@@ -264,27 +264,27 @@ bot.on("messageReactionRemove", async (reaction, user) => {
 
         //Interests Roles
 
-        if (reaction.emoji.id === "") {
+        if (reaction.emoji.id === "735652063827984385") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735648192611483669") //Gaming emoji removed
             return user.send("Gaming role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
-        if (reaction.emoji.id === "") {
+        if (reaction.emoji.id === "735371070525407271") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735648550318243892") //Anime emoji removed
             return user.send("Anime role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
-        if (reaction.emoji.id === "") {
+        if (reaction.emoji.id === "735654274947743824") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735648919652139060") //Music emoji removed
             return user.send("Music role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
-        if (reaction.emoji.id === "") {
+        if (reaction.emoji.id === "735654273605435463") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735648544706527263") //Sports emoji removed
             return user.send("Sports role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
-        if (reaction.emoji.id === "") {
+        if (reaction.emoji.id === "735654274817589289") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735648727523393568") //Netflix-binger emoji removed
             return user.send("Netflix-binger role was taken!").catch(() => console.log("Failed to send DM."));
         }
@@ -407,13 +407,13 @@ bot.on('message', message=>{
             const embed = new Discord.MessageEmbed()
         .setColor(0xF1EDED)
         .setTitle("⋆ ˚｡⋆୨୧˚ **Interests roles** ˚୨୧⋆｡˚ ⋆")
-        .setDescription(`Gaming |   \n\nAnime |   \n\nMusic |   \n\nSports |   \n\nNetflix-binger |   \n\nK-pop |  <:kpop:735654273941241976>`)
+        .setDescription(`Gaming |  <a:gaming:735652063827984385> \n\nAnime |  <a:02smile:735371070525407271> \n\nMusic |  <a:milkmusic:735654274947743824> \n\nSports |  <a:sports:735654273605435463> \n\nNetflix-binger |  <a:netflixbinger:735654274817589289> \n\nK-pop |  <:kpop:735654273941241976>`)
         channel.send(embed).then(async message => {
-            await message.react(""); // ID of emoji
-            await message.react("");
-            await message.react("");
-            await message.react("");
-            await message.react("");
+            await message.react("735652063827984385"); // ID of emoji
+            await message.react("735371070525407271");
+            await message.react("735654274947743824");
+            await message.react("735654273605435463");
+            await message.react("735654274817589289");
             await message.react("735654273941241976");
 
         })
@@ -457,6 +457,10 @@ bot.on('message', message=>{
 
         if (message.content.startsWith("abhi")) {
             message.channel.send ("**Is a coconut head!**");
+        }
+
+        if (message.content.startsWith("domi")) {
+            message.channel.send ("**Domi is a feeder on league..**");
         }
 
         if (message.content.startsWith("adios")) {
