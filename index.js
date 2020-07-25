@@ -329,11 +329,6 @@ bot.on('message', message=>{
         .setTitle("⋆ ˚｡⋆୨୧˚ **Interests roles** ˚୨୧⋆｡˚ ⋆")
         .setDescription(`Gaming |   \n\nAnime |   \n\nMusic |   \n\nSports |   \n\nNetflix-binger |   \n\nK-pop |  <:kpop:735654273941241976>`)
         channel.send(embed).then(async message => {
-            await message.react(""); // ID of emoji
-            await message.react("");
-            await message.react("");
-            await message.react("");
-            await message.react("");
             await message.react("735654273941241976");
 
         })
