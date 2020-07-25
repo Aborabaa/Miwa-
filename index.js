@@ -40,7 +40,7 @@ bot.on("messageReactionAdd", async (reaction, user) => {
     if (user.bot) return;
     if (!reaction.message.guild) return;
     
-    if(reaction.message.channel.id === "734990112655671356") {  //Gender roles give
+    if(reaction.message.channel.id === "735346171811463238") {  //Gender roles give
         if (reaction.emoji.name === "🚹") {
             await reaction.message.guild.members.cache.get(user.id).roles.add("735634742388719680") //Male emoji
             return user.send("Male role was given!").catch(() => console.log("Failed to send DM."));
@@ -60,7 +60,7 @@ bot.on("messageReactionAdd", async (reaction, user) => {
         return;
     }
 
-    if(reaction.message.channel.id === "734990112655671356") { //Age roles *give*
+    if(reaction.message.channel.id === "735346171811463238") { //Age roles *give*
         if (reaction.emoji.name === "🔞") {
             await reaction.message.guild.members.cache.get(user.id).roles.add("735639139596107878") //18- emoji
             return user.send("18- role was given!").catch(() => console.log("Failed to send DM."));
@@ -76,7 +76,7 @@ bot.on("messageReactionAdd", async (reaction, user) => {
         return;
     }
 
-    if(reaction.message.channel.id === "734990112655671356") { //Location roles *give*
+    if(reaction.message.channel.id === "735346171811463238") { //Location roles *give*
         if (reaction.emoji.id === "735646071665197116") { // emoji ID
             await reaction.message.guild.members.cache.get(user.id).roles.add("735347373869367406")//Role ID  //North america emoji given
             return user.send("North america role was given!").catch(() => console.log("Failed to send DM."));
@@ -112,7 +112,7 @@ bot.on("messageReactionAdd", async (reaction, user) => {
         return;
     }
 
-    if(reaction.message.channel.id === "734990112655671356") { //Interests roles *give*
+    if(reaction.message.channel.id === "735346171811463238") { //Interests roles *give*
         if (reaction.emoji.id === "735652063827984385") { // emoji ID
             await reaction.message.guild.members.cache.get(user.id).roles.add("735648192611483669")//Role ID  //Gaming emoji given
             return user.send("Gaming role was given!").catch(() => console.log("Failed to send DM."));
@@ -148,7 +148,7 @@ bot.on("messageReactionAdd", async (reaction, user) => {
         return;
     }
 
-    if(reaction.message.channel.id === "734990112655671356") {  //DMs roles give
+    if(reaction.message.channel.id === "735346171811463238") {  //DMs roles give
         if (reaction.emoji.name === "🔓") {
             await reaction.message.guild.members.cache.get(user.id).roles.add("735660459826479227") //DMs open emoji
             return user.send("DMs open role was given!").catch(() => console.log("Failed to send DM."));
@@ -168,7 +168,7 @@ bot.on("messageReactionAdd", async (reaction, user) => {
         return;
     }
 
-    if(reaction.message.channel.id === "734990112655671356") {  //Relationship roles give
+    if(reaction.message.channel.id === "735346171811463238") {  //Relationship roles give
         if (reaction.emoji.id === "735373846252879952") {
             await reaction.message.guild.members.cache.get(user.id).roles.add("735662466175991929") //Single emoji
             return user.send("Single role was given!").catch(() => console.log("Failed to send DM."));
@@ -202,7 +202,7 @@ bot.on("messageReactionRemove", async (reaction, user) => {
     if (user.bot) return;
     if (!reaction.message.guild) return;
 
-    if(reaction.message.channel.id === "734990112655671356") { //Roles *remove*
+    if(reaction.message.channel.id === "735346171811463238") { //Roles *remove*
         if (reaction.emoji.name === "🚹") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735634742388719680") //Male emoji removed
             return user.send("Male role was taken!").catch(() => console.log("Failed to send DM."));
@@ -356,7 +356,7 @@ bot.on('message', message=>{
         let args = message.content.substring(PREFIX.length).split(" ");
 
         if (message.content.startsWith(PREFIX + "RolesGender")) {
-            let channel = bot.channels.cache.get("734990112655671356");
+            let channel = bot.channels.cache.get("735346171811463238");
             const embed = new Discord.MessageEmbed()
         .setColor(0xF1EDED)
         .setTitle("⋆ ˚｡⋆୨୧˚ **Gender roles** ˚୨୧⋆｡˚ ⋆")
@@ -371,7 +371,7 @@ bot.on('message', message=>{
         }
 
         if (message.content.startsWith(PREFIX + "RolesAge")) {
-            let channel = bot.channels.cache.get("734990112655671356");
+            let channel = bot.channels.cache.get("735346171811463238");
             const embed = new Discord.MessageEmbed()
         .setColor(0xF1EDED)
         .setTitle("⋆ ˚｡⋆୨୧˚ **Age roles** ˚୨୧⋆｡˚ ⋆")
@@ -385,7 +385,7 @@ bot.on('message', message=>{
         }
 
         if (message.content.startsWith(PREFIX + "RolesLocation")) {
-            let channel = bot.channels.cache.get("734990112655671356"); //Channel ID
+            let channel = bot.channels.cache.get("735346171811463238"); //Channel ID
             const embed = new Discord.MessageEmbed()
         .setColor(0xF1EDED)
         .setTitle("⋆ ˚｡⋆୨୧˚ **Location roles** ˚୨୧⋆｡˚ ⋆")
@@ -403,7 +403,7 @@ bot.on('message', message=>{
         }
 
         if (message.content.startsWith(PREFIX + "RolesInterests")) {
-            let channel = bot.channels.cache.get("734990112655671356"); //Channel ID
+            let channel = bot.channels.cache.get("735346171811463238"); //Channel ID
             const embed = new Discord.MessageEmbed()
         .setColor(0xF1EDED)
         .setTitle("⋆ ˚｡⋆୨୧˚ **Interests roles** ˚୨୧⋆｡˚ ⋆")
@@ -421,7 +421,7 @@ bot.on('message', message=>{
         }
 
         if (message.content.startsWith(PREFIX + "RolesDMS")) {
-            let channel = bot.channels.cache.get("734990112655671356"); //Channel ID
+            let channel = bot.channels.cache.get("735346171811463238"); //Channel ID
             const embed = new Discord.MessageEmbed()
         .setColor(0xF1EDED)
         .setTitle("⋆ ˚｡⋆୨୧˚ **DMs roles** ˚୨୧⋆｡˚ ⋆")
@@ -436,7 +436,7 @@ bot.on('message', message=>{
         }
 
         if (message.content.startsWith(PREFIX + "RolesRelationship")) {
-            let channel = bot.channels.cache.get("734990112655671356"); //Channel ID
+            let channel = bot.channels.cache.get("735346171811463238"); //Channel ID
             const embed = new Discord.MessageEmbed()
         .setColor(0xF1EDED)
         .setTitle("⋆ ˚｡⋆୨୧˚ **Relation roles** ˚୨୧⋆｡˚ ⋆")
