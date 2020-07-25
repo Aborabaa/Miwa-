@@ -11,6 +11,10 @@ bot.login(process.env.token);
 
 const PREFIX = '-';
 
+client.emojis.find(emoji => emoji.name === "bean") 
+
+var bean = message.guild.emojis.find(emoji => emoji.name == 'bean');
+
 var version = '**1.0.0**'
 
 var servers = {};
