@@ -207,7 +207,7 @@ bot.on('message', message=>{
         if (message.content.startsWith(PREFIX + "RolesGender")) {
             let channel = bot.channels.cache.get("734990112655671356");
             const embed = new Discord.MessageEmbed()
-        .setColor(0xE7E7E7)
+        .setColor(0xF1EDED)
         .setTitle("⋆ ˚｡⋆୨୧˚ **Gender roles** ˚୨୧⋆｡˚ ⋆")
         .setDescription(`Male |  :mens: \n\nFemale |  :womens: \n\nNon-binary |  :restroom:`)
         channel.send(embed).then(async message => {
@@ -222,7 +222,7 @@ bot.on('message', message=>{
         if (message.content.startsWith(PREFIX + "RolesAge")) {
             let channel = bot.channels.cache.get("734990112655671356");
             const embed = new Discord.MessageEmbed()
-        .setColor(0xE7E7E7)
+        .setColor(0xF1EDED)
         .setTitle("⋆ ˚｡⋆୨୧˚ **Age roles** ˚୨୧⋆｡˚ ⋆")
         .setDescription(`18- |  :underage: \n\n18+ |  :warning:`)
         channel.send(embed).then(async message => {
@@ -236,7 +236,7 @@ bot.on('message', message=>{
         if (message.content.startsWith(PREFIX + "RolesLocation")) {
             let channel = bot.channels.cache.get("734990112655671356");
             const embed = new Discord.MessageEmbed()
-        .setColor(0xE7E7E7)
+        .setColor(0xF1EDED)
         .setTitle("⋆ ˚｡⋆୨୧˚ **Location roles** ˚୨୧⋆｡˚ ⋆")
         .setDescription(`North america |  <:northamerica:735646071665197116> \n\nSouth america |  <:southamerica:735646152132919389> \n\nAsia |  <:asia:735647033867632651> \n\nEurope |  <:europe:735646071451156572> \n\nOceania |  <:oceania:735646070859628555> \n\nAfrica |  <:africa:735646071039983686>`)
         channel.send(embed).then(async message => {
