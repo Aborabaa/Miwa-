@@ -187,64 +187,64 @@ bot.on("messageReactionRemove", async (reaction, user) => {
 
         //Location
 
-        if (reaction.emoji.name === "735646071665197116") {
+        if (reaction.emoji.id === "735646071665197116") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735347373869367406") //North america emoji removed
             return user.send("North america role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
-        if (reaction.emoji.name === "735646152132919389") {
+        if (reaction.emoji.id === "735646152132919389") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735348409346555944") //South america emoji removed
             return user.send("South america role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
-        if (reaction.emoji.name === "735647033867632651") {
+        if (reaction.emoji.id === "735647033867632651") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735346991445442570") //Asia emoji removed
             return user.send("Asia emoji removed role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
-        if (reaction.emoji.name === "735646071451156572") {
+        if (reaction.emoji.id === "735646071451156572") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735641416713371739") //Europe emoji removed
             return user.send("Europe role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
-        if (reaction.emoji.name === "735646070859628555") {
+        if (reaction.emoji.id === "735646070859628555") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735643648527695883") //Oceania emoji removed
             return user.send("Oceania role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
-        if (reaction.emoji.name === "") { //emoji ID
+        if (reaction.emoji.id === "735646071039983686") { //emoji ID
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735641537081376768") //Role ID //Africa emoji removed
             return user.send("Africa role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
         //Interests Roles
 
-        if (reaction.emoji.name === "") {
+        if (reaction.emoji.id === "") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735648192611483669") //Gaming emoji removed
             return user.send("Gaming role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
-        if (reaction.emoji.name === "") {
+        if (reaction.emoji.id === "") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735648550318243892") //Anime emoji removed
             return user.send("Anime role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
-        if (reaction.emoji.name === "") {
+        if (reaction.emoji.id === "") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735648919652139060") //Music emoji removed
             return user.send("Music role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
-        if (reaction.emoji.name === "") {
+        if (reaction.emoji.id === "") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735648544706527263") //Sports emoji removed
             return user.send("Sports role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
-        if (reaction.emoji.name === "") {
+        if (reaction.emoji.id === "") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735648727523393568") //Netflix-binger emoji removed
             return user.send("Netflix-binger role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
-        if (reaction.emoji.name === "735654273941241976") {
+        if (reaction.emoji.id === "735654273941241976") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735648825116459079") //K-pop emoji removed
             return user.send("K-pop role was taken!").catch(() => console.log("Failed to send DM."));
         }
