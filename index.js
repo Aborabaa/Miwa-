@@ -39,7 +39,7 @@ bot.on("messageReactionAdd", async (reaction, user) => {
     if (user.bot) return;
     if (!reaction.message.guild) return;
     
-    if(reaction.message.channel.id === "734990112655671356") {
+    if(reaction.message.channel.id === "734990112655671356") {  //Gender roles give
         if (reaction.emoji.name === "🚹") {
             await reaction.message.guild.members.cache.get(user.id).roles.add("735634742388719680") //Male emoji
             return user.send("Male role was given!").catch(() => console.log("Failed to send DM."));
@@ -58,6 +58,23 @@ bot.on("messageReactionAdd", async (reaction, user) => {
     } else {
         return;
     }
+
+    if(reaction.message.channel.id === "734990112655671356") { //Age roles *give*
+        if (reaction.emoji.name === "🔞") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735639139596107878") //18- emoji
+            return user.send("18- role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if(reaction.emoji.name === "⚠️") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735639118842691594") //18+  emoji
+            return user.send("18+ role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        
+    } else {
+        return;
+    }
+
 })
 
 bot.on("messageReactionRemove", async (reaction, user) => {
@@ -67,7 +84,7 @@ bot.on("messageReactionRemove", async (reaction, user) => {
     if (user.bot) return;
     if (!reaction.message.guild) return;
 
-    if(reaction.message.channel.id === "734990112655671356") {
+    if(reaction.message.channel.id === "734990112655671356") { //Gender roles *remove*
         if (reaction.emoji.name === "🚹") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735634742388719680") //Male emoji removed
             return user.send("Male role was taken!").catch(() => console.log("Failed to send DM."));
@@ -115,7 +132,21 @@ bot.on('message', message=>{
 
         })
             
-    }
+        }
+
+        if (message.content.startsWith(PREFIX + "RolesAge")) {
+            let channel = bot.channels.cache.get("734990112655671356");
+            const embed = new Discord.MessageEmbed()
+        .setColor(111111)
+        .setTitle("⋆ ˚｡⋆୨୧˚ **Age roles** ˚୨୧⋆｡˚ ⋆")
+        .setDescription(`18- |  :underage: \n\n18+ |  :warning:`)
+        channel.send(embed).then(async message => {
+            await message.react("🔞");
+            await message.react("⚠️");
+
+        })
+            
+        }
 
         if (message.content.startsWith("abori")) {
             message.channel.send ("**Is a dummy who cant understand english..**");
