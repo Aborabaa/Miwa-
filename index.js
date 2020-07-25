@@ -240,12 +240,12 @@ bot.on('message', message=>{
         .setTitle("⋆ ˚｡⋆୨୧˚ **Location roles** ˚୨୧⋆｡˚ ⋆")
         .setDescription(`North america |  <:northamerica:735646071665197116> \n\nSouth america |  <:southamerica:735646152132919389> \n\nAsia |  <:asia:735647033867632651> \n\nEurope |  <:europe:735646071451156572> \n\nOceania |  <:oceania:735646070859628555> \n\nAfrica |  <:africa:735646071039983686>`)
         channel.send(embed).then(async message => {
-            await message.react("<:northamerica:735646071665197116>");
-            await message.react("<:southamerica:735646152132919389>");
-            await message.react("<:asia:735647033867632651>");
-            await message.react("<:europe:735646071451156572>");
-            await message.react("<:oceania:735646070859628555>");
-            await message.react("<:africa:735646071039983686>");
+            await message.react("735646071665197116");
+            await message.react("735646152132919389");
+            await message.react("735647033867632651");
+            await message.react("735646071451156572");
+            await message.react("735646070859628555");
+            await message.react("735646071039983686");
 
         })
             
