@@ -112,7 +112,7 @@ bot.on("messageReactionAdd", async (reaction, user) => {
         return;
     }
 
-    if(reaction.message.channel.id === "734990112655671356") { //Location roles *give*
+    if(reaction.message.channel.id === "734990112655671356") { //Interests roles *give*
         if (reaction.emoji.id === "") { // emoji ID
             await reaction.message.guild.members.cache.get(user.id).roles.add("735648192611483669")//Role ID  //Gaming emoji given
             return user.send("Gaming role was given!").catch(() => console.log("Failed to send DM."));
@@ -143,6 +143,51 @@ bot.on("messageReactionAdd", async (reaction, user) => {
             return user.send("K-pop role was given!").catch(() => console.log("Failed to send DM."));
         }
 
+        
+    } else {
+        return;
+    }
+
+    if(reaction.message.channel.id === "734990112655671356") {  //DMs roles give
+        if (reaction.emoji.name === "🔓") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735660459826479227") //DMs open emoji
+            return user.send("DMs open role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if(reaction.emoji.name === "🔒") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735660936521580594") //DMs closed emoji
+            return user.send("DMs closed role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if(reaction.emoji.name === "🔐") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735660995413934190") //Ask to DM emoji
+            return user.send("Ask to DM role was given!").catch(() => console.log("Failed to send DM."));
+        }
+        
+    } else {
+        return;
+    }
+
+    if(reaction.message.channel.id === "734990112655671356") {  //Relationship roles give
+        if (reaction.emoji.id === "735373846252879952") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735662466175991929") //Single emoji
+            return user.send("Single role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if(reaction.emoji.id === "735363284068466709") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735662536581578753") //Taken emoji
+            return user.send("Taken role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if(reaction.emoji.id === "735368058989707264") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735662587500560396") //Not interested emoji
+            return user.send("Not interested role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if(reaction.emoji.id === "735664992422199307") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735662613308112977") //Looking emoji
+            return user.send("Looking role was given!").catch(() => console.log("Failed to send DM."));
+        }
         
     } else {
         return;
@@ -249,9 +294,44 @@ bot.on("messageReactionRemove", async (reaction, user) => {
             return user.send("K-pop role was taken!").catch(() => console.log("Failed to send DM."));
         }
 
+        //Interests role
 
+        if (reaction.emoji.name === "🔓") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735660459826479227") //DMs open emoji removed
+            return user.send("DMs open role was taken!").catch(() => console.log("Failed to send DM."));
+        }
 
+        if (reaction.emoji.name === "🔒") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735660936521580594") //DMs closed emoji removed
+            return user.send("DMs closed role was taken!").catch(() => console.log("Failed to send DM."));
+        }
 
+        if (reaction.emoji.name === "🔐") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735660995413934190") //Ask to DM emoji removed
+            return user.send("Ask to DM role was taken!").catch(() => console.log("Failed to send DM."));
+        }
+
+        //Relationships
+
+        if (reaction.emoji.id === "735373846252879952") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735662466175991929") //Single emoji removed
+            return user.send("Single role was taken!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if (reaction.emoji.id === "735363284068466709") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735662536581578753") //Taken emoji removed
+            return user.send("Taken role was taken!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if (reaction.emoji.id === "735368058989707264") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735662587500560396") //Not interested emoji removed
+            return user.send("Not interested role was taken!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if (reaction.emoji.id === "735664992422199307") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735662613308112977") //Looking emoji removed
+            return user.send("Looking role was taken!").catch(() => console.log("Failed to send DM."));
+        }
 
 
     
@@ -335,6 +415,37 @@ bot.on('message', message=>{
             await message.react("");
             await message.react("");
             await message.react("735654273941241976");
+
+        })
+            
+        }
+
+        if (message.content.startsWith(PREFIX + "RolesDMS")) {
+            let channel = bot.channels.cache.get("734990112655671356"); //Channel ID
+            const embed = new Discord.MessageEmbed()
+        .setColor(0xF1EDED)
+        .setTitle("⋆ ˚｡⋆୨୧˚ **DMs roles** ˚୨୧⋆｡˚ ⋆")
+        .setDescription(`DMs open |  :unlock: \n\nDMs closed |  :lock: \n\nAsk to DM |  :closed_lock_with_key:`)
+        channel.send(embed).then(async message => {
+            await message.react("🔓"); //ID of emoji
+            await message.react("🔒");
+            await message.react("🔐");
+
+        })
+            
+        }
+
+        if (message.content.startsWith(PREFIX + "RolesRelationship")) {
+            let channel = bot.channels.cache.get("734990112655671356"); //Channel ID
+            const embed = new Discord.MessageEmbed()
+        .setColor(0xF1EDED)
+        .setTitle("⋆ ˚｡⋆୨୧˚ **Relation roles** ˚୨୧⋆｡˚ ⋆")
+        .setDescription(`Single |  <:fuckoff:735373846252879952>  \n\nTaken |  <:milkandmochahugg:735363284068466709> \n\nNot interested |  <:no:735368058989707264> \n\nLooking |  <:mocharose:735664992422199307> `)
+        channel.send(embed).then(async message => {
+            await message.react("735373846252879952"); //ID of emoji
+            await message.react("735363284068466709");
+            await message.react("735368058989707264");
+            await message.react("735664992422199307");
 
         })
             
