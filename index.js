@@ -515,7 +515,7 @@ bot.on('message', message=>{
         
     
         switch(args[0]){
-            case '-play':
+            case 'play':
 
                 function play(connection, message){
                     var server = servers[message.guild.id];
