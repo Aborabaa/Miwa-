@@ -515,7 +515,7 @@ bot.on('message', message=>{
         
     
         switch(args[0]){
-            case 'play':
+            case '-play':
 
                 function play(connection, message){
                     var server = servers[message.guild.id];
@@ -551,10 +551,10 @@ bot.on('message', message=>{
                 }
      
      
-                 //if(!args[1]){
-                   //  message.channel.send("**Nani <:nani:735368107144642561> What do you want to play!**");
-                   //  return;
-                 //}
+                 if(!args[1]){
+                     message.channel.send("**Nani <:nani:735368107144642561> What do you want to play!**");
+                     return;
+                 }
      
                  if(!message.member.voice.channel){
                      message.channel.send("**You aren't in a vocie channel to listen to me <:tf:735373969376542780>!**");
