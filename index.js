@@ -75,6 +75,42 @@ bot.on("messageReactionAdd", async (reaction, user) => {
         return;
     }
 
+    if(reaction.message.channel.id === "734990112655671356") { //Location roles *give*
+        if (reaction.emoji.name === "<:northamerica:735646071665197116>") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735347373869367406") //North america emoji
+            return user.send("North america role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if(reaction.emoji.name === "<:southamerica:735646152132919389>") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735348409346555944") //South america emoji
+            return user.send("South america role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if(reaction.emoji.name === "<:asia:735647033867632651>") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735346991445442570") //Asia  emoji
+            return user.send("Asia role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if(reaction.emoji.name === "<:europe:735646071451156572>") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735641416713371739") //Europe  emoji
+            return user.send("Europe role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if(reaction.emoji.name === "<:oceania:735646070859628555>") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735643648527695883") //Oceania  emoji
+            return user.send("Oceania role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if(reaction.emoji.name === "<:africa:735646071039983686>") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735641537081376768") //Africa  emoji
+            return user.send("Africa role was given!").catch(() => console.log("Failed to send DM."));
+        }
+
+        
+    } else {
+        return;
+    }
+
 })
 
 bot.on("messageReactionRemove", async (reaction, user) => {
@@ -99,6 +135,8 @@ bot.on("messageReactionRemove", async (reaction, user) => {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735635059385827348") //Non-binary emoji removed
             return user.send("Non-binary role was taken!").catch(() => console.log("Failed to send DM."));
         }
+        
+        //Age
 
         if (reaction.emoji.name === "🔞") {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735639139596107878") //18- emoji removed
@@ -109,6 +147,40 @@ bot.on("messageReactionRemove", async (reaction, user) => {
             await reaction.message.guild.members.cache.get(user.id).roles.remove("735639118842691594") //18+ emoji removed
             return user.send("18+ role was taken!").catch(() => console.log("Failed to send DM."));
         }
+
+        //Location
+
+        if (reaction.emoji.name === "<:northamerica:735646071665197116>") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735347373869367406") //North america emoji removed
+            return user.send("North america role was taken!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if (reaction.emoji.name === "<:southamerica:735646152132919389>") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735348409346555944") //South america emoji removed
+            return user.send("South america role was taken!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if (reaction.emoji.name === "<:asia:735647033867632651>") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735346991445442570") //Asia emoji removed
+            return user.send("Asia emoji removed role was taken!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if (reaction.emoji.name === "<:europe:735646071451156572>") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735641416713371739") //Europe emoji removed
+            return user.send("Europe role was taken!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if (reaction.emoji.name === "<:oceania:735646070859628555>") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735643648527695883") //Oceania emoji removed
+            return user.send("Oceania role was taken!").catch(() => console.log("Failed to send DM."));
+        }
+
+        if (reaction.emoji.name === "<:africa:735646071039983686>") {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("735641537081376768") //Africa emoji removed
+            return user.send("Africa role was taken!").catch(() => console.log("Failed to send DM."));
+        }
+
+
 
 
     
@@ -156,6 +228,24 @@ bot.on('message', message=>{
         channel.send(embed).then(async message => {
             await message.react("🔞");
             await message.react("⚠️");
+
+        })
+            
+        }
+
+        if (message.content.startsWith(PREFIX + "RolesLocation")) {
+            let channel = bot.channels.cache.get("734990112655671356");
+            const embed = new Discord.MessageEmbed()
+        .setColor(111111)
+        .setTitle("⋆ ˚｡⋆୨୧˚ **Location roles** ˚୨୧⋆｡˚ ⋆")
+        .setDescription(`North america |  <:northamerica:735646071665197116> \n\nSouth america |  <:southamerica:735646152132919389> \n\nAsia |  <:asia:735647033867632651> \n\nEurope |  <:europe:735646071451156572> \n\nOceania |  <:oceania:735646070859628555> \n\nAfrica |  <:africa:735646071039983686>`)
+        channel.send(embed).then(async message => {
+            await message.react("<:northamerica:735646071665197116>");
+            await message.react("<:southamerica:735646152132919389>");
+            await message.react("<:asia:735647033867632651>");
+            await message.react("<:europe:735646071451156572>");
+            await message.react("<:oceania:735646070859628555>");
+            await message.react("<:africa:735646071039983686>");
 
         })
             
