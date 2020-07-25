@@ -77,32 +77,32 @@ bot.on("messageReactionAdd", async (reaction, user) => {
 
     if(reaction.message.channel.id === "734990112655671356") { //Location roles *give*
         if (reaction.emoji.name === "735646071665197116") {
-            await reaction.message.guild.members.cache.get(user.id).roles.add("735347373869367406") //North america emoji
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735347373869367406") //North america emoji given
             return user.send("North america role was given!").catch(() => console.log("Failed to send DM."));
         }
 
         if(reaction.emoji.name === "735646152132919389") {
-            await reaction.message.guild.members.cache.get(user.id).roles.add("735348409346555944") //South america emoji
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735348409346555944") //South america emoji given
             return user.send("South america role was given!").catch(() => console.log("Failed to send DM."));
         }
 
         if(reaction.emoji.name === "735647033867632651") {
-            await reaction.message.guild.members.cache.get(user.id).roles.add("735346991445442570") //Asia  emoji
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735346991445442570") //Asia  emoji given 
             return user.send("Asia role was given!").catch(() => console.log("Failed to send DM."));
         }
 
         if(reaction.emoji.name === "735646071451156572") {
-            await reaction.message.guild.members.cache.get(user.id).roles.add("735641416713371739") //Europe  emoji
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735641416713371739") //Europe  emoji given 
             return user.send("Europe role was given!").catch(() => console.log("Failed to send DM."));
         }
 
         if(reaction.emoji.name === "735646070859628555") {
-            await reaction.message.guild.members.cache.get(user.id).roles.add("735643648527695883") //Oceania  emoji
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735643648527695883") //Oceania  emoji given
             return user.send("Oceania role was given!").catch(() => console.log("Failed to send DM."));
         }
 
         if(reaction.emoji.name === "735646071039983686") {
-            await reaction.message.guild.members.cache.get(user.id).roles.add("735641537081376768") //Africa  emoji
+            await reaction.message.guild.members.cache.get(user.id).roles.add("735641537081376768") //Africa  emoji given
             return user.send("Africa role was given!").catch(() => console.log("Failed to send DM."));
         }
 
