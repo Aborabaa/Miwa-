@@ -635,7 +635,10 @@ bot.on('message', message=>{
         const userStats = guildStats[message.author.id];
         userStats.xp += random.int(15, 25);
 
+        const xpToNextLevel = 5 * Math.pow(userStats.level, 2) + 50 * userStats.level + 100;
+
         console.log(message.author.username + ' now has ' + userStats.xp);
+        console.log(xpToNextLevel + ' XP needed for next level.');
 
 });
 
