@@ -610,7 +610,7 @@ bot.on('message', message=>{
                     }
 
                     server.dispatcher.end();
-                    message.channel.send("**Okie, sttoped the queue <:mochaok:735363737355157526>**");
+                    message.channel.send("**Okie, stopped the queue <:mochaok:735363737355157526>**");
                     //console.log('Stopped the queue')
                 }
                 if(message.member.connection) message.member.voice.connection.disconnect();
@@ -627,28 +627,7 @@ bot.on('message', message=>{
             break;
         } 
         
-        if (message.guild.id in stats === false) {
-            stats[message.guild.id] = {};
-        }
-
-        const guildStats = stats[message.guild.id]
-        if (message.author.id in guildStats === false) {
-            guildStats[message.author.id] = {
-                xp: 0,
-                level: 0,
-                last_message: 0
-            };
-        }
-
-        const userStats = guildStats[message.author.id];
-        userStats.xp += random.int(15, 25);
-
-        const xpToNextLevel = 5 * Math.pow(userStats.level, 2) + 50 * userStats.level + 100;
-        if (userStats.xp >= xpToNextLevel) {
-            userStats.level++;
-            userStats.xp = userStats.xp - xpToNextLevel;
-            message.channel.send(message.author.username + ' has reached level ' + userStats.level);
-        }
+        
         
         jsonfile.writeFileSync('stats.json', stats);
 
