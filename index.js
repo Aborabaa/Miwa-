@@ -629,10 +629,7 @@ bot.on('message', message=>{
         
         
         
-        jsonfile.writeFileSync('stats.json', stats);
-
-        console.log(message.author.username +  '  now has ' + userStats.xp);
-        console.log(xpToNextLevel + ' XP needed for next level.');
+        
 
 });
 
