@@ -635,7 +635,7 @@ bot.on('message', message=>{
         const userStats = guildStats[message.author.id];
         userStats.xp += random.int(15, 25);
 
-        console.log(message.author.username + 'now has ' + userStats.xp);
+        console.log(message.author.username + ' now has ' + userStats.xp);
 
 });
 
