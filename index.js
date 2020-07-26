@@ -7,6 +7,9 @@ const ytdl = require("ytdl-core");
 const Discord = require('discord.js');
 
 const random = require('random');
+const fs = require('fs');
+const jsonfile = require('jsonfile');
+
 
 bot.login(process.env.token);
 //bot.login('');
@@ -14,6 +17,9 @@ bot.login(process.env.token);
 const PREFIX = '-';
 
 var stats = {};
+if (fs.existsSync('stats.json')) {
+    stats = jsonfile.readFileSync('stats.json');
+}
 
 var version = '**1.0.0**'
 
@@ -355,6 +361,8 @@ bot.on("messageReactionRemove", async (reaction, user) => {
 
 
 bot.on('message', message=>{
+    if (message.author.id == bot.user.id)
+        return;
     
         let args = message.content.substring(PREFIX.length).split(" ");
 
@@ -641,6 +649,8 @@ bot.on('message', message=>{
             userStats.xp = userStats.xp - xpToNextLevel;
             message.channel.send(message.author.username + ' has reached level ' + userStats.level);
         }
+        
+        jsonfile.writeFileSync('stats.json', stats);
 
         console.log(message.author.username +  '  now has ' + userStats.xp);
         console.log(xpToNextLevel + ' XP needed for next level.');
