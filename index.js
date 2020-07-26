@@ -6,11 +6,14 @@ const ytdl = require("ytdl-core");
 
 const Discord = require('discord.js');
 
+const random = require('random');
+
 bot.login(process.env.token);
 //bot.login('');
 
 const PREFIX = '-';
 
+var stats = {};
 
 var version = '**1.0.0**'
 
@@ -460,7 +463,7 @@ bot.on('message', message=>{
         }
 
         if (message.content.startsWith("domi")) {
-            message.channel.send ("**Domi is a feeder on league..**");
+            message.channel.send ("**Is a feeder on league..**");
         }
 
         if (message.content.startsWith("adios")) {
@@ -614,7 +617,25 @@ bot.on('message', message=>{
                     message.channel.send('**BAKA! <:nani:735368107144642561> Specify what do you want info about!**')
                 }
             break;
-        }           
+        } 
+        
+        if (message.guild.id in stats === false) {
+            stats[message.guild.id] = {};
+        }
+
+        const guildStats = stats[message.guild.id]
+        if (message.author.id in guildStats === false) {
+            stats[message.author.id] = {
+                xp: 0,
+                level: 0,
+                last_message: 0
+            };
+        }
+
+        const userStats = stats[message.author.id];
+        userStats.xp += random.int(15, 25);
+
+        console.log(message.author.username + 'now has' + userStats.xp);
 
 });
 
