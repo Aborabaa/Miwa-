@@ -636,8 +636,13 @@ bot.on('message', message=>{
         userStats.xp += random.int(15, 25);
 
         const xpToNextLevel = 5 * Math.pow(userStats.level, 2) + 50 * userStats.level + 100;
+        if (userStats.xp >= xpToNextLevel) {
+            userStats.level++;
+            userStats.xp = userStats.xp - xpToNextLevel;
+            message.channel.send(message.author.username + ' has reached level ' + userStats.level);
+        }
 
-        console.log(message.author.username + ' now has ' + userStats.xp);
+        console.log(message.author.username +  '  now has ' + userStats.xp);
         console.log(xpToNextLevel + ' XP needed for next level.');
 
 });
