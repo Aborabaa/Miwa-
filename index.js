@@ -31,6 +31,8 @@ bot.on('ready', () =>{
     console.log('miwa ♡ up and ready!')
 
     bot.user.setActivity("-info")
+    let botsChannel = bot.channels.get("734990112655671356")
+    botsChannel.send("Psst,Abo! Miwa ♡ is online again. <:milkthankyou:735977662039720016>")
 });
 
 bot.on("guildCreate", guild => {
