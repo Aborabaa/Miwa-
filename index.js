@@ -36,7 +36,7 @@ bot.on('ready', () =>{
 
     //This is sent whenever the bot is online again
     let botsChannel = bot.channels.cache.get("734990112655671356")
-    const attachment = new MessageAttachment("https://www.devdungeon.com/sites/all/themes/devdungeon2/logo.png")
+    const attachment = new MessageAttachment("C:\Users\GDHEM024\Desktop\Guko.png")
     botsChannel.send("YES! I am online again!")
     botsChannel.send(attachment)
 });
