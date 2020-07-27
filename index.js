@@ -465,12 +465,12 @@ bot.on('message', message=>{
         }
 
         if (message.content.startsWith(PREFIX + "help")) {
-            
+            let channel = bot.channels.cache.get("735346171811463238");
             const embed = new Discord.MessageEmbed()
         .setColor(0xF1EDED)
-        .setTitle("⋆ ˚｡⋆୨୧˚ **That's what i can do ** ˚୨୧⋆｡˚ ⋆")
-        .setDescription(`Male |  :mens: \n\nFemale |  :womens: \n\nNon-binary |  :restroom:`)
-        
+        .setTitle("⋆ ˚｡⋆୨୧˚ **That's what i can do** ˚୨୧⋆｡˚ ⋆")
+        .setDescription(`-help version \n\n-RolesGender \n\n-RolesAge`)
+        channel.send(embed)
             
         }
 
