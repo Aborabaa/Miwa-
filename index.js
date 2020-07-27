@@ -1,11 +1,11 @@
-const { Client, MessageEmbed, DiscordAPIError } = require('discord.js');
+const { Client, Attachment, MessageEmbed, DiscordAPIError } = require('discord.js');
 
 const bot = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 
 const ytdl = require("ytdl-core");
 
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Client();
 
 //consts for the level system
 const random = require('random');
@@ -34,9 +34,10 @@ bot.on('ready', () =>{
 
     bot.user.setActivity("-info")
 
+    //This is sent whenever the bot is online again
     let botsChannel = bot.channels.cache.get("734990112655671356")
-    const attachment = new Discord.Attachment("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.at%2Fpin%2F665899494882775512%2F&psig=AOvVaw2uwVw-v-q5eIEz3Oa3HhVM&ust=1595943771761000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCICHlofI7eoCFQAAAAAdAAAAABAD")
-    botsChannel.send("YES, i am online again!")
+    const attachment = new Attachment("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.at%2Fpin%2F665899494882775512%2F&psig=AOvVaw2uwVw-v-q5eIEz3Oa3HhVM&ust=1595943771761000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCICHlofI7eoCFQAAAAAdAAAAABAD")
+    botsChannel.send("YES! I am online again!")
     botsChannel.send(attachment)
 });
 
