@@ -5,7 +5,7 @@ const bot = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 const ytdl = require("ytdl-core");
 
 const Discord = require('discord.js');
-const client = new Client();
+const bot = new Client();
 
 //consts for the level system
 const random = require('random');
