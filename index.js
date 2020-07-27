@@ -41,6 +41,38 @@ bot.on('ready', () =>{
     botsChannel.send(attachment)
 });
 
+// help command
+bot.on('message', (receivedMessage) => {
+    if (receivedMessage.author == bot.user) {
+        return;
+    }
+
+    if (receivedMessage.content.startsWith("!")) {
+        processCommand(receivedMessage)
+    }
+})
+
+// Continue help command
+function processCommand(receivedMessage) {
+    let fullcommand = receivedMessage.content.substr(1)
+    let splitCommand = fullCommand.split("")
+    let primaryCommand = splitCommand[0]
+    let arguments = splitCommand.slice(1)
+
+    if (primaryCommand == "help") {
+        helpCommand(arguments. receivedMessage)
+    }
+}
+
+//continue help command (create)
+function helpCommand(argument, receivedMessage) {
+    if (arguments.length == 0) {
+        receivedMessage.channel.send("What do you want help with <:milkquestionnn:735368136299118674> try `-help [someshiz]`")
+    } esle {
+        receivedMessage.channel.send("This is what you need help with" +arguments)
+    }
+}
+
 bot.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
