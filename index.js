@@ -36,7 +36,7 @@ bot.on('ready', () =>{
 
     //This is sent whenever the bot is online again
     let botsChannel = bot.channels.cache.get("734990112655671356")
-    const attachment = new MessageAttachment("C:/Users/GDHEM024/Desktop/Guko.png")
+    const attachment = new MessageAttachment("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a2685c50-ef49-4475-b5d7-3d8dd25d7859/datj86b-d40eee4e-c772-4045-96f7-b85464a5761a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvYTI2ODVjNTAtZWY0OS00NDc1LWI1ZDctM2Q4ZGQyNWQ3ODU5XC9kYXRqODZiLWQ0MGVlZTRlLWM3NzItNDA0NS05NmY3LWI4NTQ2NGE1NzYxYS5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.NKp1arydpGQ8rnE_NLOm3SL4EBE4iqEdzH49tl2Nx9Y")
     botsChannel.send("YES! I am online again!")
     botsChannel.send(attachment)
 });
