@@ -36,7 +36,7 @@ bot.on('ready', () =>{
 
     //This is sent whenever the bot is online again
     let botsChannel = bot.channels.cache.get("734990112655671356")
-    const attachment = new MessageAttachment("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.at%2Fpin%2F665899494882775512%2F&psig=AOvVaw2uwVw-v-q5eIEz3Oa3HhVM&ust=1595943771761000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCICHlofI7eoCFQAAAAAdAAAAABAD")
+    const attachment = new MessageAttachment("https://www.kindpng.com/imgv/hbbxbxh_cool-dragon-ball-z-drawings-goku-hd-png/")
     botsChannel.send("YES! I am online again!")
     botsChannel.send(attachment)
 });
