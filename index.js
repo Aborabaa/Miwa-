@@ -465,7 +465,7 @@ bot.on('message', message=>{
         }
 
         if (message.content.startsWith(PREFIX + "help")) {
-            let channel = bot.channels.cache.get("735346171811463238");
+            
             const embed = new Discord.MessageEmbed()
         .setColor(0xF1EDED)
         .setTitle("⋆ ˚｡⋆୨୧˚ **That's what i can do** ˚୨୧⋆｡˚ ⋆")
