@@ -29,6 +29,8 @@ var check1 = 0;
 
 bot.on('ready', () =>{
     console.log('miwa ♡ up and ready!')
+
+    bot.user.setActivity("-info")
 });
 
 bot.on("guildCreate", guild => {
@@ -459,6 +461,16 @@ bot.on('message', message=>{
             await message.react("735664992422199307");
 
         })
+            
+        }
+
+        if (message.content.startsWith(PREFIX + "help")) {
+            
+            const embed = new Discord.MessageEmbed()
+        .setColor(0xF1EDED)
+        .setTitle("⋆ ˚｡⋆୨୧˚ **That's what i can do ** ˚୨୧⋆｡˚ ⋆")
+        .setDescription(`Male |  :mens: \n\nFemale |  :womens: \n\nNon-binary |  :restroom:`)
+        
             
         }
 
