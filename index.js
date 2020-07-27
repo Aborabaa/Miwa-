@@ -1,4 +1,4 @@
-const { Client, Attachment, MessageEmbed, DiscordAPIError } = require('discord.js');
+const { Client, MessageAttachment, MessageEmbed, DiscordAPIError } = require('discord.js');
 
 const bot = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 
