@@ -68,7 +68,7 @@ function processCommand(receivedMessage) {
 function helpCommand(argument, receivedMessage) {
     if (arguments.length == 0) {
         receivedMessage.channel.send("What do you want help with <:milkquestionnn:735368136299118674> try `-help [someshiz]`")
-    } esle {
+    } else {
         receivedMessage.channel.send("This is what you need help with" +arguments)
     }
 }
