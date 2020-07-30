@@ -506,11 +506,19 @@ bot.on('message', message=>{
         
 
         if (message.content.startsWith("miwa")) {
-            message.channel.send ("**Hey, you are talking about me? Cringe**");
+            message.channel.send ("**Hey, you are talking about me? Cringe <:milkannoyed:735977442585346168>**");
         }
 
         if (message.content.startsWith("is miwa working")) {
             message.channel.send ("**Pfft, of course i am you dummy <:mochabored:735978364535570504>**");
+        }
+
+        if (message.content.startsWith("is this server active")) {
+            message.channel.send ("**This is the best server you could find <:happy:735368106716954717>**");
+        }
+
+        if (message.content.startsWith("is this server good")) {
+            message.channel.send ("**This is the best server you could find <:happy:735368106716954717>**");
         }
         
         if (message.content.startsWith("abori")) {
