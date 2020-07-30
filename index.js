@@ -505,6 +505,14 @@ bot.on('message', message=>{
         }
         
 
+        if (message.content.startsWith("miwa")) {
+            message.channel.send ("**Hey, you are talking about me? Cringe**");
+        }
+
+        if (message.content.startsWith("is miwa working")) {
+            message.channel.send ("**Pfft, of course i am you dummy <:mochabored:735978364535570504>**");
+        }
+        
         if (message.content.startsWith("abori")) {
             message.channel.send ("**Is a dummy who cant understand english..**");
         }
