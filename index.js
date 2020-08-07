@@ -585,96 +585,96 @@ bot.on('message', message=>{
         
     
         switch(args[0]){
-            case 'play':
+            //case 'play':
 
-                function play(connection, message){
-                    var server = servers[message.guild.id];
+           //     function play(connection, message){
+           //         var server = servers[message.guild.id];
                     
-                    check1 = 1;
+           //         check1 = 1;
 
-                    try {
+           //         try {
 
-                    server.dispatcher = connection.play(ytdl(server.queue[0], {filter: "audioonly"}));
+           //         server.dispatcher = connection.play(ytdl(server.queue[0], {filter: "audioonly"}));
                 
                
 
-                    server.queue.shift();
+           //         server.queue.shift();
                     
                     
 
-                    server.dispatcher.on("finish", function(){
-                        if(server.queue[0]){
-                            play(connection, message);
-                            check1 = 0;
-                        }else {
-                            connection.disconnect();
-                            check1 = 0;
-                        }
-                    });
-                }
-                    catch(err){
-                        message.channel.send("**Link is not valid <:shockedd:735373911377838143>!**");
-                        connection.disconnect();
-                            check1 = 0;
-                }
+           //         server.dispatcher.on("finish", function(){
+           //             if(server.queue[0]){
+           //                 play(connection, message);
+           //                 check1 = 0;
+           //             }else {
+           //                 connection.disconnect();
+           //                 check1 = 0;
+           //             }
+           //         });
+           //     }
+           //         catch(err){
+           //             message.channel.send("**Link is not valid <:shockedd:735373911377838143>!**");
+           //             connection.disconnect();
+           //                 check1 = 0;
+           //     }
      
-                }
+           //     }
      
      
-                 if(!args[1]){
-                     message.channel.send("**Nani <:nani:735368107144642561> What do you want to play!**");
-                     return;
-                 }
+           //      if(!args[1]){
+           //          message.channel.send("**Nani <:nani:735368107144642561> What do you want to play!**");
+          //           return;
+           //      }
      
-                 if(!message.member.voice.channel){
-                     message.channel.send("**You aren't in a vocie channel to listen to me <:tf:735373969376542780>!**");
-                     return;
-                 }
+           //      if(!message.member.voice.channel){
+           //          message.channel.send("**You aren't in a vocie channel to listen to me <:tf:735373969376542780>!**");
+           //          return;
+           //      }
      
-                 if(!servers[message.guild.id]) servers[message.guild.id] = {
-                     queue: []
-                 }
+           //      if(!servers[message.guild.id]) servers[message.guild.id] = {
+           //          queue: []
+           //      }
      
-                 var server = servers[message.guild.id];
+           //      var server = servers[message.guild.id];
                  
                  
-                 server.queue.push(args[1]);
+            //     server.queue.push(args[1]);
                  
                  
-                 if(check1 === 0){
-                 if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
-                     play(connection, message);
-                 })
-                }
+           //      if(check1 === 0){
+           //      if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
+           //          play(connection, message);
+           //      })
+           //     }
 
              
                 
-            break;
+           // break;
 
-            case 'skip':
-                var server = servers[message.guild.id];
+           // case 'skip':
+           //     var server = servers[message.guild.id];
 
-                if(server.dispatcher) server.dispatcher.end();
-                message.channel.send("**Skipped! <:pepeok:735682720285327460>**");
-            break;
+           //     if(server.dispatcher) server.dispatcher.end();
+           //     message.channel.send("**Skipped! <:pepeok:735682720285327460>**");
+           // break;
 
-            case 'stop':
-                var server = servers[message.guild.id];
+           // case 'stop':
+           //     var server = servers[message.guild.id];
 
-                if(message.guild.voice.connection)
-                {
-                    for(var i = server.queue.length -1; i >=0; i--)
-                    {
-                        server.queue.splice(i,1);
-                    }
+           //     if(message.guild.voice.connection)
+           //     {
+           //         for(var i = server.queue.length -1; i >=0; i--)
+           //         {
+           //             server.queue.splice(i,1);
+           //         }
 
-                    server.dispatcher.end();
-                    message.channel.send("**Okie, stopped the queue <:mochaok:735363737355157526>**");
-                    //console.log('Stopped the queue')
-                }
-                if(message.member.connection) message.member.voice.connection.disconnect();
+           //         server.dispatcher.end();
+           //         message.channel.send("**Okie, stopped the queue <:mochaok:735363737355157526>**");
+           //         //console.log('Stopped the queue')
+          //      }
+           //     if(message.member.connection) message.member.voice.connection.disconnect();
 
-            break;   
+           // break;   
 
             
             case 'info':
